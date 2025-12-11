@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.1 on darwin)" generated="2025-12-11T00:25:00.864380" rpa="false" schemaversion="5">
+<suite id="s1" name="Ass5-2" source="/Users/kimconu/Documents/robot-fw/tests/ass5-2.robot">
+<test id="s1-t1" name="Open Example Website" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-11T00:25:01.004494" level="INFO">Opening browser 'chrome' to base url 'http://live.techpanda.org/index.php/mobile.html'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-11T00:25:01.004284" elapsed="5.741889"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@alt="Magento Commerce"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-11T00:25:06.746746" elapsed="0.018584"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-12-11T00:25:06.765803" level="INFO">Selecting options from selection list 'xpath=//select[@title='Sort By']' by label Price.</msg>
+<arg>xpath=//select[@title='Sort By']</arg>
+<arg>Price</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-12-11T00:25:06.765561" elapsed="0.628295"/>
+</kw>
+<kw name="Verify Price Sorting">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-12-11T00:25:07.404210" level="INFO">@{price_elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="012f7ed47b7bfa9e86e979697a66bf3e", element="f.8859E18C68E37E15D78E3F2846CDA545.d.A3B73108C436329ACE137A6E5CF1402B.e.53")&gt; | &lt;selenium.webdr...</msg>
+<var>@{price_elements}</var>
+<arg>css=.price</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.394661" elapsed="0.009599"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-12-11T00:25:07.404640" level="INFO">@{price_values} = [ ]</msg>
+<var>@{price_values}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.404454" elapsed="0.000210"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-12-11T00:25:07.416114" level="INFO">${txt} = $100.00</msg>
+<var>${txt}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.405106" elapsed="0.011054"/>
+</kw>
+<kw name="Clean Price" owner="StringUtils">
+<msg time="2025-12-11T00:25:07.416650" level="INFO">${clean} = 100.00</msg>
+<var>${clean}</var>
+<arg>${txt}</arg>
+<status status="PASS" start="2025-12-11T00:25:07.416320" elapsed="0.000363"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-12-11T00:25:07.417015" level="INFO">${num} = 100.0</msg>
+<var>${num}</var>
+<arg>${clean}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.416795" elapsed="0.000245"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${price_values}</arg>
+<arg>append</arg>
+<arg>${num}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.417130" elapsed="0.000123"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="012f7ed47b7bfa9e86e979697a66bf3e", element="f.8859E18C68E37E15D78E3F2846CDA545.d.A3B73108C436329ACE137A6E5CF1402B.e.53")&gt;</var>
+<status status="PASS" start="2025-12-11T00:25:07.404974" elapsed="0.012319"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-12-11T00:25:07.423889" level="INFO">${txt} = $150.00</msg>
+<var>${txt}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.417484" elapsed="0.006441"/>
+</kw>
+<kw name="Clean Price" owner="StringUtils">
+<msg time="2025-12-11T00:25:07.424191" level="INFO">${clean} = 150.00</msg>
+<var>${clean}</var>
+<arg>${txt}</arg>
+<status status="PASS" start="2025-12-11T00:25:07.424046" elapsed="0.000166"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-12-11T00:25:07.424424" level="INFO">${num} = 150.0</msg>
+<var>${num}</var>
+<arg>${clean}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.424294" elapsed="0.000148"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${price_values}</arg>
+<arg>append</arg>
+<arg>${num}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.424511" elapsed="0.000101"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="012f7ed47b7bfa9e86e979697a66bf3e", element="f.8859E18C68E37E15D78E3F2846CDA545.d.A3B73108C436329ACE137A6E5CF1402B.e.54")&gt;</var>
+<status status="PASS" start="2025-12-11T00:25:07.417411" elapsed="0.007237"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-12-11T00:25:07.429919" level="INFO">${txt} = $130.00</msg>
+<var>${txt}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.424819" elapsed="0.005127"/>
+</kw>
+<kw name="Clean Price" owner="StringUtils">
+<msg time="2025-12-11T00:25:07.430152" level="INFO">${clean} = 130.00</msg>
+<var>${clean}</var>
+<arg>${txt}</arg>
+<status status="PASS" start="2025-12-11T00:25:07.430033" elapsed="0.000140"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-12-11T00:25:07.430357" level="INFO">${num} = 130.0</msg>
+<var>${num}</var>
+<arg>${clean}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.430245" elapsed="0.000130"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${price_values}</arg>
+<arg>append</arg>
+<arg>${num}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.430441" elapsed="0.000095"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="012f7ed47b7bfa9e86e979697a66bf3e", element="f.8859E18C68E37E15D78E3F2846CDA545.d.A3B73108C436329ACE137A6E5CF1402B.e.55")&gt;</var>
+<status status="PASS" start="2025-12-11T00:25:07.424753" elapsed="0.005818"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-12-11T00:25:07.435884" level="INFO">${txt} = $500.00</msg>
+<var>${txt}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.430722" elapsed="0.005194"/>
+</kw>
+<kw name="Clean Price" owner="StringUtils">
+<msg time="2025-12-11T00:25:07.436145" level="INFO">${clean} = 500.00</msg>
+<var>${clean}</var>
+<arg>${txt}</arg>
+<status status="PASS" start="2025-12-11T00:25:07.436016" elapsed="0.000149"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-12-11T00:25:07.436353" level="INFO">${num} = 500.0</msg>
+<var>${num}</var>
+<arg>${clean}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.436238" elapsed="0.000134"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${price_values}</arg>
+<arg>append</arg>
+<arg>${num}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.436438" elapsed="0.000099"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="012f7ed47b7bfa9e86e979697a66bf3e", element="f.8859E18C68E37E15D78E3F2846CDA545.d.A3B73108C436329ACE137A6E5CF1402B.e.56")&gt;</var>
+<status status="PASS" start="2025-12-11T00:25:07.430660" elapsed="0.005913"/>
+</iter>
+<var>${el}</var>
+<value>@{price_elements}</value>
+<status status="PASS" start="2025-12-11T00:25:07.404767" elapsed="0.031846"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Actual list: ${price_values}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.436723" elapsed="0.000167"/>
+</kw>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-12-11T00:25:07.437104" level="INFO">@{sorted} = [ 100.0 | 150.0 | 130.0 | 500.0 ]</msg>
+<var>@{sorted}</var>
+<arg>${price_values}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.436966" elapsed="0.000159"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-12-11T00:25:07.437406" level="INFO">${sorted} = [100.0, 130.0, 150.0, 500.0]</msg>
+<var>${sorted}</var>
+<arg>sorted(${price_values})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.437205" elapsed="0.000221"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Sorted list: ${sorted}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-12-11T00:25:07.437494" elapsed="0.000099"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<msg time="2025-12-11T00:25:07.437909" level="FAIL">Lists are different:
+Index 1: 150.0 != 130.0
+Index 2: 130.0 != 150.0</msg>
+<arg>${price_values}</arg>
+<arg>${sorted}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="FAIL" start="2025-12-11T00:25:07.437680" elapsed="0.000379">Lists are different:
+Index 1: 150.0 != 130.0
+Index 2: 130.0 != 150.0</status>
+</kw>
+<status status="FAIL" start="2025-12-11T00:25:07.394295" elapsed="0.043884">Lists are different:
+Index 1: 150.0 != 130.0
+Index 2: 130.0 != 150.0</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-12-11T00:25:07.438303" elapsed="0.000021"/>
+</kw>
+<status status="FAIL" start="2025-12-11T00:25:01.003421" elapsed="6.435046">Lists are different:
+Index 1: 150.0 != 130.0
+Index 2: 130.0 != 150.0</status>
+</test>
+<status status="FAIL" start="2025-12-11T00:25:00.865294" elapsed="6.573589"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ass5-2" id="s1" pass="0" fail="1" skip="0">Ass5-2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
