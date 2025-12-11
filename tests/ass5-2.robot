@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
-Library    StringUtils.py
+Library    ../resources/price_keywords.py    WITH NAME    Price
 
 *** Variables ***
 ${URL}    http://live.techpanda.org/index.php/mobile.html
@@ -15,30 +15,8 @@ Open Example Website
     # Sort by price
     Select From List By Label    xpath=//select[@title='Sort By']    Price
 
-    # Verify sort
-    Verify Price Sorting
+    ${elements}=    Get WebElements    xpath=//span[@class='price']
+    ${prices}=      Price.Convert Prices To List    ${elements}
+    Price.Verify Sorted Ascending    ${prices}
 
     Sleep    5
-
-
-*** Keywords ***
-Verify Price Sorting
-    @{price_elements}=    Get WebElements    css=.price
-    @{price_values}=      Create List
-
-    FOR    ${el}    IN    @{price_elements}
-        ${txt}=    Get Text    ${el}
-        ${clean}=    Clean Price    ${txt}
-        ${num}=    Convert To Number    ${clean}
-        Call Method    ${price_values}    append    ${num}
-    END
-
-    Log To Console    Actual list: ${price_values}
-
-    @{sorted}=    Copy List    ${price_values}
-    ${sorted}=    Evaluate    sorted(${price_values})
-
-    Log To Console    Sorted list: ${sorted}
-
-    Collections.Lists Should Be Equal    ${price_values}    ${sorted}
-

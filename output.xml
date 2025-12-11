@@ -1,188 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.1 on darwin)" generated="2025-12-11T21:19:51.801587" rpa="false" schemaversion="5">
-<suite id="s1" name="Ass4" source="/Users/kimconu/Documents/robot-fw/tests/ass4.robot">
-<test id="s1-t1" name="Open Example Website" line="10">
+<robot generator="Robot 7.3.2 (Python 3.14.1 on darwin)" generated="2025-12-12T00:27:36.954047" rpa="false" schemaversion="5">
+<suite id="s1" name="Ass5-2" source="/Users/kimconu/Documents/robot-fw/tests/ass5-2.robot">
+<test id="s1-t1" name="Open Example Website" line="11">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:51.870291" level="INFO">Opening browser 'chrome' to base url 'http://iframetester.com/'.</msg>
+<msg time="2025-12-12T00:27:37.055526" level="INFO">Opening browser 'chrome' to base url 'http://live.techpanda.org/index.php/mobile.html'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-12-11T21:19:51.870154" elapsed="2.622355"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:54.496858" level="INFO">Typing text 'https://katalon-demo-cura.herokuapp.com/#appointment' into text field 'xpath=//input[@id='url-search']'.</msg>
-<arg>xpath=//input[@id='url-search']</arg>
-<arg>https://katalon-demo-cura.herokuapp.com/#appointment</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:54.493659" elapsed="0.127650"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:54.621878" level="INFO">Clicking button 'xpath=//button[text()='Render iframe']'.</msg>
-<arg>xpath=//button[text()='Render iframe']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:54.621677" elapsed="0.342659"/>
+<status status="PASS" start="2025-12-12T00:27:37.055393" elapsed="4.095719"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//iframe[@id='iframe-window']</arg>
+<arg>xpath=//img[@alt="Magento Commerce"]</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-11T21:19:54.964532" elapsed="1.544970"/>
+<status status="PASS" start="2025-12-12T00:27:41.153753" elapsed="0.018423"/>
 </kw>
-<kw name="Select Frame" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:56.509969" level="INFO">Selecting frame 'xpath=//iframe[@id='iframe-window']'.</msg>
-<arg>xpath=//iframe[@id='iframe-window']</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<status status="PASS" start="2025-12-11T21:19:56.509760" elapsed="0.018023"/>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-12-12T00:27:41.172526" level="INFO">Selecting options from selection list 'xpath=//select[@title='Sort By']' by label Price.</msg>
+<arg>xpath=//select[@title='Sort By']</arg>
+<arg>Price</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-12-12T00:27:41.172361" elapsed="0.510654"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//a[text()='Make Appointment']</arg>
-<arg>timeout=10</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-11T21:19:56.527964" elapsed="0.013762"/>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-12-12T00:27:41.690439" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="bd924d4d423e3be07901646403ca683e", element="f.761AC728D027BE4BCA3CB09D3E03F3C2.d.EFBD08785CF224E498E831D212B576D1.e.53")&gt;, &lt;selenium.webdriv...</msg>
+<var>${elements}</var>
+<arg>xpath=//span[@class='price']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-12-12T00:27:41.683217" elapsed="0.007264"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:56.542075" level="INFO">Clicking element 'xpath=//a[text()='Make Appointment']'.</msg>
-<arg>xpath=//a[text()='Make Appointment']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:56.541904" elapsed="2.464274"/>
+<kw name="Price.Convert Prices To List">
+<msg time="2025-12-12T00:27:41.692235" level="FAIL">No keyword with name 'Price.Convert Prices To List' found.</msg>
+<var>${prices}</var>
+<arg>${elements}</arg>
+<status status="FAIL" start="2025-12-12T00:27:41.692198" elapsed="0.000077">No keyword with name 'Price.Convert Prices To List' found.</status>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//h2[text()='Login']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.006580" elapsed="0.022284"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:59.029396" level="INFO">Typing text 'John Doee' into text field 'id=txt-username'.</msg>
-<arg>id=txt-username</arg>
-<arg>John Doee</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.029126" elapsed="0.095971"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:59.125408" level="INFO">Typing text 'ThisIsNotAPasswordd' into text field 'id=txt-password'.</msg>
-<arg>id=txt-password</arg>
-<arg>ThisIsNotAPasswordd</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.125262" elapsed="0.055739"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>id=txt-username</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.181160" elapsed="0.022593"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>id=txt-password</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.203918" elapsed="0.028714"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:59.232910" level="INFO">Typing text 'John Doe' into text field 'id=txt-username'.</msg>
-<arg>id=txt-username</arg>
-<arg>John Doe</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.232774" elapsed="0.081236"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:59.314293" level="INFO">Typing text 'ThisIsNotAPassword' into text field 'id=txt-password'.</msg>
-<arg>id=txt-password</arg>
-<arg>ThisIsNotAPassword</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.314156" elapsed="0.044620"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=btn-login</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-11T21:19:59.358921" elapsed="0.008589"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-12-11T21:19:59.367775" level="INFO">Clicking button 'id=btn-login'.</msg>
-<msg time="2025-12-11T21:20:00.507478" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-12-11T21:20:00.507707" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;iframe id="iframe-window" src="https://katalon-demo-cura.herokuapp.com/#appointment" style="display: block;" cd_frame_id_="71ecb10d7c31b2a07ef7f0aad64e3fce"&gt;...&lt;/iframe&gt; is not clickable at point (581, 586). Other element would receive the click: &lt;footer&gt;...&lt;/footer&gt;
-  (Session info: chrome=143.0.7499.40); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-0   chromedriver                        0x00000001049ded7c cxxbridge1$str$ptr + 3028012
-1   chromedriver                        0x00000001049d6c3c cxxbridge1$str$ptr + 2994924
-2   chromedriver                        0x00000001044d2b1c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 74196
-3   chromedriver                        0x000000010451f44c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 387844
-4   chromedriver                        0x000000010451da2c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 381156
-5   chromedriver                        0x000000010451bd4c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 373764
-6   chromedriver                        0x000000010451acac _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369508
-7   chromedriver                        0x000000010450fcb4 _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 324460
-8   chromedriver                        0x000000010450f758 _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 323088
-9   chromedriver                        0x000000010455a978 _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 630832
-10  chromedriver                        0x000000010450e17c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 317492
-11  chromedriver                        0x00000001049a32cc cxxbridge1$str$ptr + 2783612
-12  chromedriver                        0x00000001049a6a30 cxxbridge1$str$ptr + 2797792
-13  chromedriver                        0x0000000104983560 cxxbridge1$str$ptr + 2653200
-14  chromedriver                        0x00000001049a72a0 cxxbridge1$str$ptr + 2799952
-15  chromedriver                        0x0000000104973f30 cxxbridge1$str$ptr + 2590176
-16  chromedriver                        0x00000001049c61b8 cxxbridge1$str$ptr + 2926696
-17  chromedriver                        0x00000001049c6338 cxxbridge1$str$ptr + 2927080
-18  chromedriver                        0x00000001049d6894 cxxbridge1$str$ptr + 2993988
-19  libsystem_pthread.dylib             0x000000018bb3bc0c _pthread_start + 136
-20  libsystem_pthread.dylib             0x000000018bb36b80 thread_start + 8
-</msg>
-<arg>id=btn-login</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-12-11T21:19:59.367649" elapsed="1.157101">ElementClickInterceptedException: Message: element click intercepted: Element &lt;iframe id="iframe-window" src="https://katalon-demo-cura.herokuapp.com/#appointment" style="display: block;" cd_frame_id_="71ecb10d7c31b2a07ef7f0aad64e3fce"&gt;...&lt;/iframe&gt; is not clickable at point (581, 586). Other element would receive the click: &lt;footer&gt;...&lt;/footer&gt;
-  (Session info: chrome=143.0.7499.40); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-0   chromedriver                        0x00000001049ded7c cxxbridge1$str$ptr + 3028012
-1   chromedriver                        0x00000001049d6c3c cxxbridge1$str$ptr + 2994924
-2   chromedriver                        0x00000001044d2b1c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 74196
-3   chromedriver                        0x000000010451f44c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 387844
-4   chromedriver                        0x000000010451da2c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 381156
-5   chromedriver                        0x000000010451bd4c _RNvCsgXDX2mvAJA...
-    [ Message content over the limit has been removed. ]
-... _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 317492
-11  chromedriver                        0x00000001049a32cc cxxbridge1$str$ptr + 2783612
-12  chromedriver                        0x00000001049a6a30 cxxbridge1$str$ptr + 2797792
-13  chromedriver                        0x0000000104983560 cxxbridge1$str$ptr + 2653200
-14  chromedriver                        0x00000001049a72a0 cxxbridge1$str$ptr + 2799952
-15  chromedriver                        0x0000000104973f30 cxxbridge1$str$ptr + 2590176
-16  chromedriver                        0x00000001049c61b8 cxxbridge1$str$ptr + 2926696
-17  chromedriver                        0x00000001049c6338 cxxbridge1$str$ptr + 2927080
-18  chromedriver                        0x00000001049d6894 cxxbridge1$str$ptr + 2993988
-19  libsystem_pthread.dylib             0x000000018bb3bc0c _pthread_start + 136
-20  libsystem_pthread.dylib             0x000000018bb36b80 thread_start + 8</status>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//h3[text()='We Care About Your Health']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-12-11T21:20:00.524900" elapsed="0.000023"/>
+<kw name="Price.Verify Sorted Ascending">
+<arg>${prices}</arg>
+<status status="NOT RUN" start="2025-12-12T00:27:41.692396" elapsed="0.000016"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<arg>15</arg>
+<arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-12-11T21:20:00.525018" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-12-12T00:27:41.692487" elapsed="0.000017"/>
 </kw>
-<doc>This test opens rahulshettyacademy.com</doc>
-<status status="FAIL" start="2025-12-11T21:19:51.869633" elapsed="8.655544">ElementClickInterceptedException: Message: element click intercepted: Element &lt;iframe id="iframe-window" src="https://katalon-demo-cura.herokuapp.com/#appointment" style="display: block;" cd_frame_id_="71ecb10d7c31b2a07ef7f0aad64e3fce"&gt;...&lt;/iframe&gt; is not clickable at point (581, 586). Other element would receive the click: &lt;footer&gt;...&lt;/footer&gt;
-  (Session info: chrome=143.0.7499.40); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-0   chromedriver                        0x00000001049ded7c cxxbridge1$str$ptr + 3028012
-1   chromedriver                        0x00000001049d6c3c cxxbridge1$str$ptr + 2994924
-2   chromedriver                        0x00000001044d2b1c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 74196
-3   chromedriver                        0x000000010451f44c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 387844
-4   chromedriver                        0x000000010451da2c _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 381156
-5   chromedriver                        0x000000010451bd4c _RNvCsgXDX2mvAJA...
-    [ Message content over the limit has been removed. ]
-... _RNvCsgXDX2mvAJAg_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 317492
-11  chromedriver                        0x00000001049a32cc cxxbridge1$str$ptr + 2783612
-12  chromedriver                        0x00000001049a6a30 cxxbridge1$str$ptr + 2797792
-13  chromedriver                        0x0000000104983560 cxxbridge1$str$ptr + 2653200
-14  chromedriver                        0x00000001049a72a0 cxxbridge1$str$ptr + 2799952
-15  chromedriver                        0x0000000104973f30 cxxbridge1$str$ptr + 2590176
-16  chromedriver                        0x00000001049c61b8 cxxbridge1$str$ptr + 2926696
-17  chromedriver                        0x00000001049c6338 cxxbridge1$str$ptr + 2927080
-18  chromedriver                        0x00000001049d6894 cxxbridge1$str$ptr + 2993988
-19  libsystem_pthread.dylib             0x000000018bb3bc0c _pthread_start + 136
-20  libsystem_pthread.dylib             0x000000018bb36b80 thread_start + 8</status>
+<status status="FAIL" start="2025-12-12T00:27:37.054859" elapsed="4.637771">No keyword with name 'Price.Convert Prices To List' found.</status>
 </test>
-<status status="FAIL" start="2025-12-11T21:19:51.802203" elapsed="8.723354"/>
+<status status="FAIL" start="2025-12-12T00:27:36.955015" elapsed="4.737893"/>
 </suite>
 <statistics>
 <total>
@@ -191,9 +55,10 @@ Stacktrace:
 <tag>
 </tag>
 <suite>
-<stat name="Ass4" id="s1" pass="0" fail="1" skip="0">Ass4</stat>
+<stat name="Ass5-2" id="s1" pass="0" fail="1" skip="0">Ass5-2</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-12-12T00:27:37.054542" level="WARN">Imported library '/Users/kimconu/Documents/robot-fw/resources/price_keywords.py' contains no keywords.</msg>
 </errors>
 </robot>
