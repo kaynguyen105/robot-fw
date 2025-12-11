@@ -10,7 +10,7 @@ ${URL}    http://iframetester.com/
 Open Example Website
     [Documentation]            This test opens rahulshettyacademy.com
     Open Browser    ${URL}    chrome    
-    Input Text    xpath=//input[@id='url-search']    https://katalon-demo-cura.herokuapp.com/#appointment
+    Input Text    xpath=//input[@id='url-search']    http://testtrack.org/file-upload-demo
     click button    xpath=//button[text()='Render iframe']
      # switch to iframe
     Wait Until Element Is Visible    xpath=//iframe[@id='iframe-window']    10s
