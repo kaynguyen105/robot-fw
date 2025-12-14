@@ -25,3 +25,9 @@ Login With Valid Account
     Input Username    ${VALID_USERNAME}
     Input Password    ${VALID_PASSWORD}
     Click Login    ${LOGIN_SUBMIT_BUTTON}
+
+Login With Invalid Account
+    [Arguments]    ${INVALID_USERNAME}    ${INVALID_PASSWORD}
+    Input Username    ${INVALID_USERNAME}
+    Input Password    ${INVALID_PASSWORD}
+    Click Login    ${LOGIN_SUBMIT_BUTTON}

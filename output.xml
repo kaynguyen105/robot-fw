@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.1 on darwin)" generated="2025-12-14T23:59:05.117818" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.1 on darwin)" generated="2025-12-15T00:03:38.239422" rpa="false" schemaversion="5">
 <suite id="s1" name="Login test" source="/Users/kimconu/Documents/robot-fw/assignment6/tests/Login_test.robot">
 <test id="s1-t1" name="User Can Login Successfully" line="8">
 <kw name="Go To URL" owner="common_keyword">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-12-14T23:59:05.256072" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-12-15T00:03:38.385692" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>browser_options=--allow-running-insecure-content --ignore-certificate-errors --disable-web-security</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-12-14T23:59:05.255848" elapsed="19.312408"/>
+<status status="PASS" start="2025-12-15T00:03:38.385465" elapsed="5.630900"/>
 </kw>
 <arg>${BASE_URL}</arg>
-<status status="PASS" start="2025-12-14T23:59:05.255168" elapsed="19.313484"/>
+<status status="PASS" start="2025-12-15T00:03:38.384777" elapsed="5.631988"/>
 </kw>
-<kw name="Login With Valid Account" owner="LoginPage">
+<kw name="Login With Invalid Account" owner="LoginPage">
 <kw name="Input Username" owner="LoginPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_USERNAME_INPUT}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-14T23:59:24.570017" elapsed="4.165700"/>
+<status status="PASS" start="2025-12-15T00:03:44.018075" elapsed="0.796950"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-14T23:59:28.736148" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
+<msg time="2025-12-15T00:03:44.815441" level="INFO">Typing text 'invalidUser' into text field 'xpath=//input[@name='username']'.</msg>
 <arg>${LOGIN_USERNAME_INPUT}</arg>
 <arg>${VALID_USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-14T23:59:28.735901" elapsed="0.126663"/>
+<status status="PASS" start="2025-12-15T00:03:44.815199" elapsed="0.146972"/>
 </kw>
-<arg>${VALID_USERNAME}</arg>
-<status status="PASS" start="2025-12-14T23:59:24.569781" elapsed="4.292893"/>
+<arg>${INVALID_USERNAME}</arg>
+<status status="PASS" start="2025-12-15T00:03:44.017845" elapsed="0.944443"/>
 </kw>
 <kw name="Input Password" owner="LoginPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_PASSWORD_INPUT}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-14T23:59:28.863083" elapsed="0.012621"/>
+<status status="PASS" start="2025-12-15T00:03:44.962701" elapsed="0.011927"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-12-14T23:59:28.876092" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@name='password']'.</msg>
+<msg time="2025-12-15T00:03:44.975014" level="INFO">Typing text 'invalidPass' into text field 'xpath=//input[@name='password']'.</msg>
 <arg>${LOGIN_PASSWORD_INPUT}</arg>
 <arg>${VALID_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-14T23:59:28.875870" elapsed="0.057579"/>
+<status status="PASS" start="2025-12-15T00:03:44.974792" elapsed="0.062545"/>
 </kw>
-<arg>${VALID_PASSWORD}</arg>
-<status status="PASS" start="2025-12-14T23:59:28.862828" elapsed="0.070726"/>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2025-12-15T00:03:44.962448" elapsed="0.074992"/>
 </kw>
 <kw name="Click Login" owner="LoginPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-14T23:59:28.933959" elapsed="0.011870"/>
+<status status="PASS" start="2025-12-15T00:03:45.037841" elapsed="0.012882"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-12-14T23:59:28.946167" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<msg time="2025-12-15T00:03:45.051127" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-14T23:59:28.945980" elapsed="1.293271"/>
+<status status="PASS" start="2025-12-15T00:03:45.050903" elapsed="0.845953"/>
 </kw>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
-<status status="PASS" start="2025-12-14T23:59:28.933706" elapsed="1.305644"/>
+<status status="PASS" start="2025-12-15T00:03:45.037588" elapsed="0.859374"/>
 </kw>
-<arg>${VALID_USERNAME}</arg>
-<arg>${VALID_PASSWORD}</arg>
-<status status="PASS" start="2025-12-14T23:59:24.569141" elapsed="5.670255"/>
+<arg>${INVALID_USERNAME}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2025-12-15T00:03:44.017289" elapsed="1.879723"/>
 </kw>
-<status status="PASS" start="2025-12-14T23:59:05.254665" elapsed="24.984895"/>
+<status status="PASS" start="2025-12-15T00:03:38.384269" elapsed="7.512921"/>
 </test>
-<status status="PASS" start="2025-12-14T23:59:05.118787" elapsed="25.121236"/>
+<status status="PASS" start="2025-12-15T00:03:38.240385" elapsed="7.657287"/>
 </suite>
 <statistics>
 <total>
