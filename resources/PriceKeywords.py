@@ -2,7 +2,7 @@ class PriceKeywords:
 
     def convert_prices_to_list(self, elements):
         """
-        elements: list of WebElements (<span class='product-price'>)
+        elements: list of WebElements (<span class='price'>)
         return: list[float]
         """
         prices = []

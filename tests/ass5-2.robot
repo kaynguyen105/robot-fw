@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
-Library    ../resources/price_keywords.py    WITH NAME    Price
+Library    ../resources/PriceKeywords.py
 
 *** Variables ***
 ${URL}    http://live.techpanda.org/index.php/mobile.html
@@ -16,7 +16,6 @@ Open Example Website
     Select From List By Label    xpath=//select[@title='Sort By']    Price
 
     ${elements}=    Get WebElements    xpath=//span[@class='price']
-    ${prices}=      Price.Convert Prices To List    ${elements}
-    Price.Verify Sorted Ascending    ${prices}
-
+    ${prices}=      Convert Prices To List    ${elements}
+    Verify Sorted Ascending    ${prices}
     Sleep    5
