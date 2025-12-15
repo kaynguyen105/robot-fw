@@ -10,6 +10,7 @@ ${URL}    http://iframetester.com/
 Open Example Website
     [Documentation]            This test opens rahulshettyacademy.com
     Open Browser    ${URL}    chrome    
+    Maximize Browser Window
     Input Text    xpath=//input[@id='url-search']    https://katalon-demo-cura.herokuapp.com/#appointment
     click button    xpath=//button[text()='Render iframe']
      # switch to iframe

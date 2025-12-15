@@ -9,7 +9,7 @@ ${BROWSER}         chrome
 # =========================
 # Test user credentials
 # =========================
-${VALID_USERNAME}    Admin
-${VALID_PASSWORD}    admin123
-${INVALID_USERNAME}  invalidUser
-${INVALID_PASSWORD}  invalidPass
+${valid_username}    Admin
+${valid_password}    admin123
+${invalid_username}  invalidUser
+${invalid_password}  invalidPass

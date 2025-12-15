@@ -7,4 +7,4 @@ Resource    ../keywords/common_keyword.robot
 *** Test Cases ***
 User Can Login Successfully
     Go To URL    ${BASE_URL}
-    Login With Invalid Account    ${INVALID_USERNAME}    ${INVALID_PASSWORD}
+    Login With Invalid Account    ${invalid_username}    ${invalid_password}

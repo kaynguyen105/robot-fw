@@ -5,29 +5,14 @@ Resource    ../resources/variables/common_variables.robot
 Resource    ../keywords/common_keyword.robot
 
 *** Keywords ***
-Input Username
-    [Arguments]    ${VALID_USERNAME}
-    Wait Until Element Is Visible    ${LOGIN_USERNAME_INPUT}    10s
-    Input Text    ${LOGIN_USERNAME_INPUT}    ${VALID_USERNAME}
-
-Input Password
-    [Arguments]    ${VALID_PASSWORD}
-    Wait Until Element Is Visible    ${LOGIN_PASSWORD_INPUT}    10s
-    Input Text    ${LOGIN_PASSWORD_INPUT}    ${VALID_PASSWORD}
-
-Click Login
-    [Arguments]    ${LOGIN_SUBMIT_BUTTON}
-    Wait Until Element Is Visible    ${LOGIN_SUBMIT_BUTTON}    10s
-    Click Button    ${LOGIN_SUBMIT_BUTTON}
-
 Login With Valid Account
-    [Arguments]    ${VALID_USERNAME}    ${VALID_PASSWORD}
-    Input Username    ${VALID_USERNAME}
-    Input Password    ${VALID_PASSWORD}
-    Click Login    ${LOGIN_SUBMIT_BUTTON}
+    [Arguments]    ${valid_username}    ${valid_password}
+    Input Text On Page    ${input_username}    ${valid_username}
+    Input Text On Page    ${input_password}    ${valid_password}
+    Click Element On Page    ${btn_login}
 
 Login With Invalid Account
-    [Arguments]    ${INVALID_USERNAME}    ${INVALID_PASSWORD}
-    Input Username    ${INVALID_USERNAME}
-    Input Password    ${INVALID_PASSWORD}
-    Click Login    ${LOGIN_SUBMIT_BUTTON}
+    [Arguments]    ${invalid_username}    ${invalid_password}
+    Input Text On Page    ${input_username}    ${invalid_username}
+    Input Text On Page    ${input_password}    ${invalid_password}
+    Click Element On Page    ${btn_login}
